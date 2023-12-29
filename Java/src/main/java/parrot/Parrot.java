@@ -4,6 +4,7 @@ public class Parrot {
 
     // create a new class that inherits from Parrot named NorwegianBlue
 
+
     private final ParrotTypeEnum type;
     private final int numberOfCoconuts;
     private final double voltage;
@@ -14,6 +15,14 @@ public class Parrot {
         this.numberOfCoconuts = numberOfCoconuts;
         this.voltage = voltage;
         this.isNailed = isNailed;
+    }
+
+    public String getCry() {
+        return switch (type) {
+            case EUROPEAN -> "Sqoork!";
+            case AFRICAN -> "Sqaark!";
+            case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
+        };
     }
 
     public double getSpeed() {
@@ -35,13 +44,5 @@ public class Parrot {
 
     private double getBaseSpeed() {
         return 12.0;
-    }
-
-    public String getCry() {
-        return switch (type) {
-            case EUROPEAN -> "Sqoork!";
-            case AFRICAN -> "Sqaark!";
-            case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
-        };
     }
 }
