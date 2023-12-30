@@ -10,6 +10,7 @@ public class Parrot {
     private final boolean isNailed;
     private final EuropeanParrot europeanParrot = new EuropeanParrot();
     private final AfricanParrot africanParrot = new AfricanParrot();
+    private final NorwegianBlueParrot norwegianBlueParrot = new NorwegianBlueParrot();
 
     public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
         this.type = type;
@@ -22,12 +23,8 @@ public class Parrot {
         return switch (type) {
             case EUROPEAN -> europeanParrot.getEuropeanCry();
             case AFRICAN -> africanParrot.getAfricanCry();
-            case NORWEGIAN_BLUE -> getNorwegianBlueCry(voltage);
+            case NORWEGIAN_BLUE -> norwegianBlueParrot.getNorwegianBlueCry(voltage);
         };
-    }
-
-    private String getNorwegianBlueCry(double voltage) {
-        return voltage > 0 ? "Bzzzzzz" : "...";
     }
 
     public double getSpeed() {
