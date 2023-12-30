@@ -8,6 +8,7 @@ public class Parrot {
     private final int numberOfCoconuts;
     private final double voltage;
     private final boolean isNailed;
+    private final EuropeanParrot europeanParrot = new EuropeanParrot();
     private final AfricanParrot africanParrot = new AfricanParrot();
 
     public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
@@ -19,7 +20,7 @@ public class Parrot {
 
     public String getCry() {
         return switch (type) {
-            case EUROPEAN -> EuropeanParrot.getEuropeanCry();
+            case EUROPEAN -> europeanParrot.getEuropeanCry();
             case AFRICAN -> africanParrot.getAfricanCry();
             case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
         };

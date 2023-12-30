@@ -1,7 +1,7 @@
 package parrot;
 
 public class EuropeanParrot {
-    public static String getEuropeanCry() {
+    public String getEuropeanCry() {
         return "Sqoork!";
     }
 }
