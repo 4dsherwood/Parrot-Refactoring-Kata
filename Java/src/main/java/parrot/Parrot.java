@@ -36,7 +36,7 @@ public class Parrot {
     }
 
     private double getEuropeanBaseSpeed() {
-        return getBaseSpeed();
+        return 12.0;
     }
 
     private double getBaseSpeed() {
