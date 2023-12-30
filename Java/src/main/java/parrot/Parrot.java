@@ -29,10 +29,14 @@ public class Parrot {
     public double getSpeed() {
         // code smell: switch by type
         return switch (type) {
-            case EUROPEAN -> getBaseSpeed();
+            case EUROPEAN -> getEuropeanBaseSpeed();
             case AFRICAN -> Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
             case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
         };
+    }
+
+    private double getEuropeanBaseSpeed() {
+        return getBaseSpeed();
     }
 
     private double getBaseSpeed() {
