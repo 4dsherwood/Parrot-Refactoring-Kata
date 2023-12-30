@@ -25,10 +25,6 @@ public class Parrot {
         };
     }
 
-    public String getAfricanCry() {
-        return africanParrot.getAfricanCry();
-    }
-
     public double getSpeed() {
         // code smell: switch by type
         return switch (type) {
