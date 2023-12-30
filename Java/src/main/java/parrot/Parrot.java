@@ -4,11 +4,11 @@ public class Parrot {
 
     // create a new class that inherits from Parrot named NorwegianBlue
 
-
     private final ParrotTypeEnum type;
     private final int numberOfCoconuts;
     private final double voltage;
     private final boolean isNailed;
+    private final AfricanParrot africanParrot = new AfricanParrot();
 
     public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
         this.type = type;
@@ -20,9 +20,13 @@ public class Parrot {
     public String getCry() {
         return switch (type) {
             case EUROPEAN -> EuropeanParrot.getEuropeanCry();
-            case AFRICAN -> "Sqaark!";
+            case AFRICAN -> africanParrot.getAfricanCry();
             case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
         };
+    }
+
+    public String getAfricanCry() {
+        return africanParrot.getAfricanCry();
     }
 
     public double getSpeed() {
